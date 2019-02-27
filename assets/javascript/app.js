@@ -11,14 +11,47 @@ $(document).ready(function() {
       answer: "Mt. Everest"
     },
     {
-      question: "What is the height of Mt. Everest?",
-      options: ["8838 meters", "8848 meters ", "8888 meteres", "8898 meters"],
-      answer: "8848 meters"
+      question: "How high is Mount Everest?",
+      options: [
+        "7,571m above sea level",
+        "8,848m above sea level ",
+        "8,888m above sea level",
+        "8,898m above sea level"
+      ],
+      answer: "8,848m above sea level"
     },
     {
-      question: "How",
-      options: ["a", "b", "c", "w"],
-      answer: "b"
+      question:
+        "Which of the following President's faces is NOT carved into Mount Rushmore?",
+      options: [
+        "George Washington",
+        "Thomas Jefferson",
+        "Franklin Roosevelt",
+        "Theodore Roosevelt"
+      ],
+      answer: "Franklin Roosevelt"
+    },
+    {
+      question:
+        "Who were the first climbers known to reach the top of Mount Everest?",
+      options: [
+        "Edmund Hillary & Tenzing Norgay",
+        "Raymond Lambert & Tenzing Norgay",
+        "George Mallory & Andrew Irvine",
+        "James Whittaker & Shambu Tamang"
+      ],
+      answer: "Edmund Hillary & Tenzing Norgay"
+    },
+    {
+      question: "What is the world's longest mountain range on land?",
+      options: ["Himalayan Mountains", "Rocky Mountains","Andes Mountains","Carpathian Mountains"],
+      answer: "Andes Mountains"
+    },
+
+    {
+      question: "What is North America's highest mountain?",
+      options: ["Mount McKinley","Mount Rocky","Mount Whitney","Pico de Orizaba"],
+      answer: "Mount McKinley"
     }
   ];
 
