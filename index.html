@@ -16,16 +16,119 @@
       crossorigin="anonymous"
     />
 
+    <link rel="stylesheet" href="assets/css/style.css" />
+
     <title>Trivia</title>
   </head>
   <body>
+    <header>
+      <nav class="navbar navbar-light" style="background-color: #527f9b">
+        <p>
+          Trivia World
+        </p>
+      </nav>
+    </header>
+    <!-- Modal for game starter -->
+    <div
+      class="modal fade"
+      id="gameStarter"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="gameStarterLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="gameStarterLabel">
+              Rules- Mountain Trivia Game
+            </h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <ol>
+              <li>
+                You will be given 10 seconds for each question.
+              </li>
+              <li>You have to checked the box adjacent to the answer.</li>
+              <li>Next question will appear after 15 seconds.</li>
+              <li>
+                Result will be shown after completion of a set of question.
+              </li>
+            </ol>
+            <p>Click Okay when you are ready.</p>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary exist"
+              data-dismiss="modal"
+            >
+              Okay
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Modal for result -->
+    <div
+      class="modal fade"
+      id="gameResult"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="gameResultLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="gameResultLabel">
+              Result
+            </h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p id="questions"></p>
+            <p id="correct"></p>
+            <p id="incorrect"></p>
+             <hr>
+
+            <p>Click Okay if you want to retry.</p>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary exist"
+              data-dismiss="modal"
+            >
+              Okay
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <div class="container">
-      <h1>Trivia World!</h1>
+      <p id="timer">00:00</p>
       <div class="row questionaires">
         <div class="col-12">
           <div class="row questionaire">
             <div class="col-12">
-            <p class="question"> what is height of Mt. Everest? </p>  
+              <p class="question"></p>
             </div>
             <div class="form-check form-check-inline">
               <input
@@ -35,7 +138,7 @@
                 id="option1"
                 value="option1"
               />
-              <label class="form-check-label" for="option1">1</label>
+              <label class="form-check-label" for="option1"></label>
             </div>
             <div class="form-check form-check-inline">
               <input
@@ -45,7 +148,7 @@
                 id="option2"
                 value="option2"
               />
-              <label class="form-check-label" for="option2">2</label>
+              <label class="form-check-label" for="option2"></label>
             </div>
             <div class="form-check form-check-inline">
               <input
@@ -55,7 +158,7 @@
                 id="option3"
                 value="option3"
               />
-              <label class="form-check-label" for="option3">3</label>
+              <label class="form-check-label" for="option3"></label>
             </div>
             <div class="form-check form-check-inline">
               <input
@@ -65,7 +168,7 @@
                 id="option4"
                 value="option4"
               />
-              <label class="form-check-label" for="option4">4</label>
+              <label class="form-check-label" for="option4"></label>
             </div>
           </div>
         </div>

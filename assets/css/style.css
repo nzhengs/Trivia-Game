@@ -1,0 +1,14 @@
+/* body{ */
+/* background-image: url("../images/background.jpg") */
+/* } */
+nav {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  color: beige;
+  font-size: 30px;
+  letter-spacing: 5px;
+  font-weight: bolder;
+}
+nav > p {
+  margin: auto;
+}
