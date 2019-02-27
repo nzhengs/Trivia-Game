@@ -75,15 +75,6 @@ $(document).ready(function() {
     $('input[name="options"]').prop("checked", false);
   }
 
-  // var interval = setInterval(function() {
-  //   displayAQuestionaire(questionaires[i]);
-  //   i++;
-  //   if (i > questionaires.length - 1) {
-  //     clearInterval(interval);
-  //     showResult();
-  //   }
-  // }, 2000);
-
   $("input[name=options]").click(function() {
     var clicked = this.value;
     var answer = questionaires[i - 1].answer;
@@ -99,8 +90,5 @@ $(document).ready(function() {
     $("#questions").text("Total Questions: " + questionaires.length);
     $("#correct").text("Correct Answers: " + correctAnswer);
     $("#incorrect").text("Incorrect Answers: " + incorrectAnswer);
-
-    console.log(correctAnswer);
-    console.log(incorrectAnswer);
   }
 });
