@@ -12,3 +12,8 @@ nav {
 nav > p {
   margin: auto;
 }
+
+.hidden{
+    display: none;
+
+}

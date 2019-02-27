@@ -23,7 +23,7 @@ $(document).ready(function() {
   var i = 0;
   var correctAnswer = 0;
   var incorrectAnswer = 0;
-  
+
   var timer;
   function countDownTimer() {
     var time = 0;
@@ -38,16 +38,17 @@ $(document).ready(function() {
 
     $(".exist").click(function() {
       countDownTimer();
+      $(".hidden").show();
       displayAQuestionInInterval();
     });
   }
 
   function displayAQuestionInInterval() {
-    i=0;
+    i = 0;
     displayAQuestionaire(questionaires[i]);
     i++;
     var interval = setInterval(function() {
-      
+      $('input[name="options"]').prop("checked", false);
       displayAQuestionaire(questionaires[i]);
       i++;
       if (i > questionaires.length - 1) {
@@ -91,10 +92,9 @@ $(document).ready(function() {
 
   function showResult() {
     $("#gameResult").modal("show");
-    $("#questions").text("Total Questions: "+ questionaires.length);
-    $("#correct").text("Correct Answers: "+ correctAnswer);
+    $("#questions").text("Total Questions: " + questionaires.length);
+    $("#correct").text("Correct Answers: " + correctAnswer);
     $("#incorrect").text("Incorrect Answers: " + incorrectAnswer);
-    
 
     console.log(correctAnswer);
     console.log(incorrectAnswer);
