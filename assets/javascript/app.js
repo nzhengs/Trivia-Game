@@ -1,14 +1,19 @@
 $(document).ready(function() {
   var questionaires = [
     {
-      question: "What?",
-      options: ["a", "b", "c", "d"],
-      answer: "a"
+      question: "Which one of following is the heighest peak in the world?",
+      options: [
+        "Mt. Machhapuhre",
+        "Mt. Kilimanjaro",
+        "Mt. Everest",
+        "Mt. Ketu"
+      ],
+      answer: "Mt. Everest"
     },
     {
-      question: "When?",
-      options: ["x", "y", "z", "e"],
-      answer: "z"
+      question: "What is the height of Mt. Everest?",
+      options: ["8838 meters", "8848 meters ", "8888 meteres", "8898 meters"],
+      answer: "8848 meters"
     },
     {
       question: "How",
@@ -17,8 +22,6 @@ $(document).ready(function() {
     }
   ];
 
-  console.log(questionaires[2].question);
-  console.log(questionaires[2].options);
   startGame();
   var i = 0;
   var correctAnswer = 0;
@@ -48,15 +51,15 @@ $(document).ready(function() {
     displayAQuestionaire(questionaires[i]);
     i++;
     var interval = setInterval(function() {
-      $('input[name="options"]').prop("checked", false);
-      displayAQuestionaire(questionaires[i]);
-      i++;
       if (i > questionaires.length - 1) {
         clearInterval(interval);
         clearInterval(timer);
         showResult();
+        return;
       }
-    }, 2000);
+      displayAQuestionaire(questionaires[i]);
+      i++;
+    }, 10000);
   }
 
   function displayAQuestionaire(questionaire) {
@@ -69,6 +72,7 @@ $(document).ready(function() {
     $("#option2").val(questionaire.options[1]);
     $("#option3").val(questionaire.options[2]);
     $("#option4").val(questionaire.options[3]);
+    $('input[name="options"]').prop("checked", false);
   }
 
   // var interval = setInterval(function() {
