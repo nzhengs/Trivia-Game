@@ -44,23 +44,32 @@ $(document).ready(function() {
     },
     {
       question: "What is the world's longest mountain range on land?",
-      options: ["Himalayan Mountains", "Rocky Mountains","Andes Mountains","Carpathian Mountains"],
+      options: [
+        "Himalayan Mountains",
+        "Rocky Mountains",
+        "Andes Mountains",
+        "Carpathian Mountains"
+      ],
       answer: "Andes Mountains"
     },
 
     {
       question: "What is North America's highest mountain?",
-      options: ["Mount McKinley","Mount Rocky","Mount Whitney","Pico de Orizaba"],
+      options: [
+        "Mount McKinley",
+        "Mount Rocky",
+        "Mount Whitney",
+        "Pico de Orizaba"
+      ],
       answer: "Mount McKinley"
     }
   ];
 
-  startGame();
   var i = 0;
-  var correctAnswer = 0;
-  var incorrectAnswer = 0;
-
   var timer;
+  var result = [];
+
+  startGame();
   function countDownTimer() {
     var time = 0;
     timer = setInterval(function() {
@@ -111,17 +120,31 @@ $(document).ready(function() {
   $("input[name=options]").click(function() {
     var clicked = this.value;
     var answer = questionaires[i - 1].answer;
-    if (clicked == answer) {
-      correctAnswer = correctAnswer + 1;
-    } else {
-      incorrectAnswer = incorrectAnswer + 1;
-    }
+    var isCorrect = clicked === answer;
+    result[i - 1] = isCorrect;
   });
 
   function showResult() {
+    var correctAnswer = result.reduce(function(count, value) {
+      if (value) {
+        return count + 1;
+      }
+      return count;
+    }, 0);
+
+    var incorrectAnswer = result.reduce(function(count, value) {
+      if (!value) {
+        return count + 1;
+      }
+      return count;
+    }, 0);
+
+    var unattempt = questionaires.length - (correctAnswer + incorrectAnswer);
+    console.log(unattempt);
     $("#gameResult").modal("show");
     $("#questions").text("Total Questions: " + questionaires.length);
     $("#correct").text("Correct Answers: " + correctAnswer);
     $("#incorrect").text("Incorrect Answers: " + incorrectAnswer);
+    $("#unattempt").text("Missed questions: " + unattempt);
   }
 });
